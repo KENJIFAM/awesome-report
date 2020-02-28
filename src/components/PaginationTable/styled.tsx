@@ -104,6 +104,12 @@ export const PaginationContainer = styled.div(props => ({
   margin: 0,
 }));
 
+export const PageButtons = styled.span(props => ({
+  [props.theme.breakpoints.max('sm')]: {
+    display: 'none',
+  },
+}));
+
 export const ThreeDot = styled.span(props => ({
   textAlign: 'center',
   minWidth: 32,

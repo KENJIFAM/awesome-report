@@ -1,5 +1,5 @@
 import React from 'react';
-import { PaginationContainer, ThreeDot, ItemButton, PageInfo } from './styled';
+import { PaginationContainer, ThreeDot, ItemButton, PageInfo, PageButtons } from './styled';
 
 export interface IPaginationProps {
   canPreviousPage: boolean;
@@ -49,15 +49,17 @@ const Pagination = ({
       <ItemButton onClick={() => previousPage()} disabled={!canPreviousPage}>
         {'<'}
       </ItemButton>
-      {visiblePages.map((p, i) =>
-        typeof p === 'number' ? (
-          <ItemButton key={i} onClick={() => gotoPage(p - 1)} active={pageIndex === p - 1}>
-            {p}
-          </ItemButton>
-        ) : (
-          <ThreeDot key={i}>...</ThreeDot>
-        ),
-      )}
+      <PageButtons>
+        {visiblePages.map((p, i) =>
+          typeof p === 'number' ? (
+            <ItemButton key={i} onClick={() => gotoPage(p - 1)} active={pageIndex === p - 1}>
+              {p}
+            </ItemButton>
+          ) : (
+            <ThreeDot key={i}>...</ThreeDot>
+          ),
+        )}
+      </PageButtons>
       <ItemButton onClick={() => nextPage()} disabled={!canNextPage}>
         {'>'}
       </ItemButton>
