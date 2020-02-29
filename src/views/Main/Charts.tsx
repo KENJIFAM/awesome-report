@@ -1,9 +1,9 @@
 import React, { memo, useMemo } from 'react';
-import { ReportData } from '../../types';
+import { IReportData } from '../../types';
 import { MainSpinner, ChartsContainer, StyledChart, SectionTitle } from './styled';
 
 export interface IChartProps {
-  reportData: ReportData;
+  reportData: IReportData;
 }
 
 const Charts = ({

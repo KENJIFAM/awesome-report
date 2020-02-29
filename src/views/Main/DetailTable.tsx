@@ -1,11 +1,11 @@
 import React, { memo, useMemo } from 'react';
-import { DailyReport, Cell } from '../../types';
+import { IDailyReport, ICell } from '../../types';
 import PaginationTable from '../../components/PaginationTable';
 import { Column } from 'react-table';
 import { DetailTableContainer, SectionTitle, StyledYear } from './styled';
 
 export interface IDetailTableProps {
-  dailyData: DailyReport[];
+  dailyData: IDailyReport[];
 }
 
 const renderDate = (date: string) => {
@@ -36,13 +36,13 @@ const DetailTable = ({ dailyData }: IDetailTableProps) => {
       {
         Header: 'Date',
         accessor: 'date',
-        Cell: ({ cell: { value } }: Cell) => renderDate(value),
+        Cell: ({ cell: { value } }: ICell) => renderDate(value),
       },
     ],
     [],
   );
 
-  const data: DailyReport[] = useMemo(
+  const data: IDailyReport[] = useMemo(
     () =>
       dailyData.map(row => ({
         conversation_count: row.conversation_count,

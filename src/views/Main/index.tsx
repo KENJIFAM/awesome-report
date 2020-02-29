@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GetReportArgs, ReportData } from '../../types';
+import { IGetReportArgs, IReportData } from '../../types';
 import { getReport } from '../../services/api';
 import { handleError, handleSuccess } from '../../services/notifications';
 import { Container, MainSpinner, AlertText } from './styled';
@@ -8,15 +8,15 @@ import Overview from './Overview';
 import DetailTable from './DetailTable';
 import Charts from './Charts';
 
-const DEFAULT_REPORT_ARGS: GetReportArgs = {
+const DEFAULT_REPORT_ARGS: IGetReportArgs = {
   startDate: '2017-05-01',
   endDate: '2017-06-15',
   token: '',
 };
 
 const Main = () => {
-  const [reportArgs, setReportArgs] = useState<GetReportArgs>(DEFAULT_REPORT_ARGS);
-  const [reportData, setReportData] = useState<ReportData | null>(null);
+  const [reportArgs, setReportArgs] = useState<IGetReportArgs>(DEFAULT_REPORT_ARGS);
+  const [reportData, setReportData] = useState<IReportData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
@@ -29,11 +29,11 @@ const Main = () => {
     }
   }, []);
 
-  const fetchData = async (reportArgs: GetReportArgs) => {
+  const fetchData = async (reportArgs: IGetReportArgs) => {
     setLoading(true);
     try {
       const res = await getReport(reportArgs);
-      setReportData(res.data as ReportData);
+      setReportData(res.data as IReportData);
       setLoading(false);
       setError(false);
       handleSuccess('Fetched successfully!');

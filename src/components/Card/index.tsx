@@ -6,13 +6,11 @@ export interface ICardProps {
   value: number;
 }
 
-const Card = ({ name, value }: ICardProps) => {
-  return (
-    <Container>
-      <Value>{value}</Value>
-      <Name>{name}</Name>
-    </Container>
-  );
-};
+const Card = ({ name, value }: ICardProps) => (
+  <Container>
+    <Value>{value}</Value>
+    <Name>{name}</Name>
+  </Container>
+);
 
 export default Card;

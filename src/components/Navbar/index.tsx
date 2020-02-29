@@ -5,14 +5,12 @@ export interface INavbarProps {
   title: string;
 }
 
-const Navbar = ({ title }: INavbarProps) => {
-  return (
-    <Root>
-      <Container>
-        <Title>{title}</Title>
-      </Container>
-    </Root>
-  );
-};
+const Navbar = ({ title }: INavbarProps) => (
+  <Root>
+    <Container>
+      <Title>{title}</Title>
+    </Container>
+  </Root>
+);
 
 export default Navbar;

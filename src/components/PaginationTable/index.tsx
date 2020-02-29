@@ -10,7 +10,7 @@ import {
   TableBody,
 } from './styled';
 import TableSortLabel from './TableSortLabel';
-import Pagination from './Pagination';
+import Pagination, { IPaginationProps } from './Pagination';
 
 export interface IPaginationTableProps {
   columns: any;
@@ -51,7 +51,7 @@ const PaginationTable = ({ columns, data, pageSize = 5, defaultSortBy }: IPagina
     usePagination,
   );
 
-  const paginationProps = {
+  const paginationProps: IPaginationProps = {
     canPreviousPage,
     canNextPage,
     pageCount,
