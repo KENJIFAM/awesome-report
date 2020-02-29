@@ -2,6 +2,8 @@ import { AxiosError } from 'axios';
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
 
+toastr.options.preventDuplicates = true;
+
 export const handleError = (error: AxiosError) => {
   if (error.message === 'Network Error' && !error.response) {
     return toastr.error('Network error!');

@@ -35,6 +35,7 @@ const Main = () => {
       const res = await getReport(reportArgs);
       setReportData(res.data as ReportData);
       setLoading(false);
+      setError(false);
       handleSuccess('Fetched successfully!');
       localStorage.setItem('reportArgs', JSON.stringify(reportArgs));
     } catch (e) {
