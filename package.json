@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-google-charts": "^3.0.15",
     "react-scripts": "3.4.0",
     "react-table": "^7.0.0-rc.16",
     "styled-components": "^5.0.1",
@@ -57,7 +58,6 @@
     "husky": "^4.2.3",
     "precise-commits": "^1.0.2",
     "prettier": "^1.19.1",
-    "react-google-charts": "^3.0.15",
     "typescript": "^3.7.5"
   },
   "husky": {

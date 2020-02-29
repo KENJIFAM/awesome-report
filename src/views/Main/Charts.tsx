@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { IReportData } from '../../types';
 import { MainSpinner, ChartsContainer, StyledChart, SectionTitle } from './styled';
 
-export interface IChartProps {
+export interface IChartsProps {
   reportData: IReportData;
 }
 
@@ -13,7 +13,7 @@ const Charts = ({
     total_visitor_message_count,
     by_date,
   },
-}: IChartProps) => {
+}: IChartsProps) => {
   const overviewData = useMemo(
     () => [
       ['Statistics', 'Count', { role: 'style' }],
